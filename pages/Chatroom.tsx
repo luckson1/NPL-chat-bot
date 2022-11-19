@@ -1,6 +1,6 @@
 import React from "react";
-import { AddChat } from "./components/Chat/AddChat";
-import { MessageBody } from "./components/Chat/MessageBody";
+import { AddChat } from "../components/Chat/AddChat";
+import { MessageBody } from "../components/Chat/MessageBody";
 
 const ChatRoom = () => {
   return (

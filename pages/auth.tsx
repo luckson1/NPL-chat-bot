@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
-import { LoginCard } from "./components/LoginCard";
+import { LoginCard } from "../components/LoginCard";
+
 
 export default function Auth () {
     const [showModal, setShowModal] = useState(false);
