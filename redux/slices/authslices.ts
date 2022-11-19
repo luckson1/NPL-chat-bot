@@ -1,4 +1,4 @@
-import { UserType } from "../../api/models/users"
+
 import { ApiSlice } from "../Api/Api"
 
 export interface UserCredentials {
