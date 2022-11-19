@@ -1,1 +1,1 @@
-export const BaseURL= "http://localhost:3000/api"
+export const BaseURL= "https://npl-chat-bot.vercel.app/api"
