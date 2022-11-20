@@ -33,7 +33,7 @@ const response = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 const result= completion.data.choices[0].text 
 
-await dbConnect()
+
     const session = await (getSession({req})) as userSession
    const   creator= session?.id ?? session?.sub
    const ai=true
