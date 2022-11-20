@@ -15,7 +15,7 @@ export const AddChatForm = () => {
   //handle adding task
   const addMessageHandler = async (values: messageFormValues) => {
 await createMessage(values)
-await getAiResponse(values)
+isSuccess? await getAiResponse(values): null
   };
   const formik = useFormik({
     initialValues: {
