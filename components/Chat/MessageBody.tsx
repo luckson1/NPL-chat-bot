@@ -30,12 +30,6 @@ const messages=data as Message[]
               <ChatCard message={message} key={message?._id} />
             ))
           : <p className="text-sky-400 ">No Messages to Display</p>}
-        <div className="mt-5 border-2 border-blue-700">
-       {  messages?.length>=24 && <button
-       className="px-4 py-2 bg-cyan-300"
-            onClick={() => setLimit((limit) => limit + 5)}
-          >Load More</button>}
-        </div>
       </div>
     </>
   );
