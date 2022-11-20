@@ -12,7 +12,10 @@ const openai = new OpenAIApi(configuration);
 
 function generatePrompt(message: string) {
   return `The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, loving, intelligent and very friendly.
-    ${message}`;
+    
+  
+  Human: ${message} 
+  AI: ` ;
 }
 
 const response = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -26,6 +29,7 @@ const response = async (req: NextApiRequest, res: NextApiResponse) => {
       top_p: 1,
       frequency_penalty: 0.0,
       presence_penalty: 0.6,
+      stop: [" Human:", " AI:"],
     });
 const result= completion.data.choices[0].text 
 
