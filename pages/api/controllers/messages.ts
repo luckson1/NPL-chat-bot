@@ -26,7 +26,7 @@ export const createMessage = async (
 
   const { messageBody } = req.body;
   try {
-    await dbConnect()
+
     const session = await (getSession({req})) as userSession
    const   creator= session?.id ?? session?.sub
    const image=session?.image
