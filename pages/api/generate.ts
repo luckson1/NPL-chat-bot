@@ -45,16 +45,3 @@ const result= completion.data.choices[0].text
   }
 };
 export default response;
-
-// const response = async () =>
-//   await openai.createCompletion({
-//     model: "text-davinci-002",
-//     prompt:
-//       "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, loving, intelligent and very friendly.",
-//     temperature: 0.9,
-//     max_tokens: 150,
-//     top_p: 1,
-//     frequency_penalty: 0.0,
-//     presence_penalty: 0.6,
-//     stop: [" Human:", " AI:"],
-//   });
