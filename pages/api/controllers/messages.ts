@@ -11,13 +11,18 @@ sub: string
 id: string
 image: string
 jti: string
-_doc: {
+_doc?: {
   _id: string
   name: string
 email: string
 },
-}
 
+}
+export const config = {
+  api: {
+      externalResolver: true
+  }
+}
 
 export const createMessage = async (
   req: NextApiRequest,
@@ -32,9 +37,10 @@ export const createMessage = async (
    const image=session?.image
    const creatorName=session?.name
     const message = await Message.create({ messageBody,   creator, image, creatorName });
-    res.json(message);
+    res.status(200).json(message);
+    res.end()
   } catch (error) {
-    res.json(error);
+    res.status(500).json(error);
   }
 };
 
@@ -43,11 +49,11 @@ export const getMessages=async(  req: NextApiRequest,
     res: NextApiResponse)=>{
    
 try {
-  await dbConnect()
   const session = await (getSession({req})) as userSession
   const   id= session?.id ?? session?.sub
     const messages= await Message.find({creator: id})
-    res.json(messages)
+    res.status(200).json(messages);
+    res.end()
 } catch (error) {
     res.json(error)
 }
