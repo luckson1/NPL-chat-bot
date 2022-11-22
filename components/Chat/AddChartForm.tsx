@@ -36,10 +36,10 @@ await createMessage(values)
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="flex flex-row flex-wrap gap-1 md:gap-2 w-11/12"
+      className="flex flex-row flex-wrap gap-2 md:gap-2 w-11/12"
     >
       <input
-        className=" w-6/12 md:w-8/12 h-7 rounded-lg px-2 py-5 bg-inherit border-solid border-[1px] text-slate-50"
+        className=" w-8/12  md:w-10/12 h-7 rounded-lg px-2 py-5 bg-inherit border-solid border-[1px] text-slate-50"
         type="text"
         id="messageBody"
         onChange={formik.handleChange("messageBody")}
@@ -47,7 +47,7 @@ await createMessage(values)
         value={formik.values.messageBody}
         placeholder="Enter a message"
       />
-      <button className="px-4 py-2 bg-violet-300 rounded-lg" type="submit" >Add Message</button>
+      <button className="px-3 py-2 bg-violet-300 rounded-lg" type="submit" >Send</button>
     </form>
   );
 };
