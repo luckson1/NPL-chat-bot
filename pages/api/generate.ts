@@ -38,9 +38,9 @@ const result= completion.data.choices[0].text
    const   creator= session?.id ?? session?.sub
    const ai=true
     const message = await Message.create({ messageBody: result,   creator , ai, creatorName:" AI"});
-    res.json(message);
+    res.status(200).json(message);
+    res.end()
   } catch (error) {
-
     res.json(error);
   }
 };
