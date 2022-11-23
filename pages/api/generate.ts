@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 import { Configuration, OpenAIApi } from "openai";
-import dbConnect from "./config/dbConfig";
 import { userSession } from "./controllers/messages";
 import Message from "./models/messages";
 
