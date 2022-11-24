@@ -103,7 +103,7 @@ export const LoginCard = ({ isSignUp, setIsSignUp }: LoginProps) => {
   return (
     <div className="absolute left-0 right-0 top-20 sm:top-28 bg-[#1B2430] shadow-2xl h-fit pb-7 pt-5 w-80 md:w-10/12  lg:w-8/12 rounded-lg ml-auto mr-auto flex flex-col md:flex-row  px-10 md:gap-5 ">
       <section className=" w-10/11 md:w-[50%] items-center flex flex-col justify-center">
-        <div className="flex flex-row gap-3 mb-5 w-64">
+        <div className="flex flex-row gap-3 mb-5 w-72">
           <p className="tracking-wider text-violet-300 mb-3">
             Login with Social
           </p>
@@ -112,14 +112,14 @@ export const LoginCard = ({ isSignUp, setIsSignUp }: LoginProps) => {
         <>
           <button
             onClick={() => signIn("google", { callbackUrl: "/Chatroom" })}
-            className=" border-slate-100 border-2 rounded w-64 h-10 flex-row justify-center gap-4 flex items-center mb-5"
+            className=" border-slate-100 border-2 rounded w-72 h-10 flex-row justify-center gap-4 flex items-center mb-5"
           >
             <p className="tracking-[5px] text-white">Google </p>
             <FcGoogle size={"30px"} />
           </button>
           <button
             onClick={() => signIn("facebook", { callbackUrl: "/Chatroom" })}
-            className=" border-slate-100 border-2 rounded w-64 h-10 flex-row justify-center gap-4 flex items-center"
+            className=" border-slate-100 border-2 rounded w-72 h-10 flex-row justify-center gap-4 flex items-center"
           >
             <p className="tracking-[5px] text-white">Facebook</p>
             <BsFacebook size={"30px"} className="text-blue-600" />
@@ -128,7 +128,7 @@ export const LoginCard = ({ isSignUp, setIsSignUp }: LoginProps) => {
       </section>
       <section className=" w-10/11 md:w-[50%] items-center flex flex-col justify-center md: mt-10">
         <form onSubmit={formik.handleSubmit}>
-          <div className="w-64  mb-3 flex flex-row gap-0">
+          <div className="w-72  mb-3 flex flex-row gap-0">
             <button
               type="button"
               className={
@@ -163,10 +163,12 @@ export const LoginCard = ({ isSignUp, setIsSignUp }: LoginProps) => {
           )}
           {isError && <Alerts>{registerationErr}</Alerts>}
           {loginErr && <Alerts>{loginErr}</Alerts>}
+          <div className="flex flex-row gap-7">
           {isSignUp && (
+         
             <input
               value={formik.values.firstName}
-              className="rounded w-64 my-2 py-[7px] px-2 bg-inherit border-[1px] text-white border-white"
+              className="rounded w-32 my-2 py-[7px] px-2 bg-inherit border-[1px] text-white border-white"
               onChange={formik.handleChange("firstName")}
               onBlur={formik.handleBlur("firstName")}
               type="text"
@@ -177,7 +179,7 @@ export const LoginCard = ({ isSignUp, setIsSignUp }: LoginProps) => {
           <Alerts>{formik.touched.firstName && formik.errors.firstName}</Alerts>
           {isSignUp && (
             <input
-              className="rounded w-64 my-2 py-[7px] px-2 bg-inherit border-[1px] text-white border-white"
+              className="rounded w-32 my-2 py-[7px] px-2 bg-inherit border-[1px] text-white border-white"
               value={formik.values.lastName}
               onChange={formik.handleChange("lastName")}
               onBlur={formik.handleBlur("lastName")}
@@ -187,9 +189,10 @@ export const LoginCard = ({ isSignUp, setIsSignUp }: LoginProps) => {
           )}
           {/* Err */}
           <Alerts>{formik.touched.lastName && formik.errors.lastName}</Alerts>
+          </div>
           <input
             value={formik.values.email}
-            className="rounded w-64 my-2 py-[7px] px-2 bg-inherit border-[1px] text-white border-white"
+            className="rounded w-72 my-2 py-[7px] px-2 bg-inherit border-[1px] text-white border-white"
             onChange={formik.handleChange("email")}
             onBlur={formik.handleBlur("email")}
             type="email"
@@ -199,7 +202,7 @@ export const LoginCard = ({ isSignUp, setIsSignUp }: LoginProps) => {
           <Alerts>{formik.touched.email && formik.errors.email}</Alerts>
           <input
             value={formik.values.password}
-            className="rounded w-64 my-2 py-[7px] px-2 bg-inherit border-[1px] text-white border-white"
+            className="rounded w-72 my-2 py-[7px] px-2 bg-inherit border-[1px] text-white border-white"
             onChange={formik.handleChange("password")}
             onBlur={formik.handleBlur("password")}
             type={reveal ? "text" : "password"}
@@ -217,7 +220,7 @@ export const LoginCard = ({ isSignUp, setIsSignUp }: LoginProps) => {
 
           <button
             type="submit"
-            className="mt-5 py-2 px-20 border-solid bg-sky-600 rounded w-64"
+            className="mt-5 py-2 px-20 border-solid bg-sky-600 rounded w-72"
           >
             {isSignUp ? "Sign Up" : "Login"}
           </button>
